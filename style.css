@@ -10,46 +10,77 @@ header {
     background-color: #54565A;
     padding: 20px;
     display: flex;
-    align-items: center; /* Alinha logo e nome verticalmente */
+    align-items: center;
     justify-content: center;
 }
 
 header .logo {
-    width: 50px; /* Tamanho fixo da largura da logo */
-    height: 50px; /* Tamanho fixo da altura da logo */
-    margin-right: 15px; /* Espaço entre logo e nome */
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
 }
 
 header .event-name {
     color: #fff;
-    font-size: 24px;
+    font-size: 18px;
     margin: 0;
 }
 
 main {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#eventListContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#eventListContainer button {
+    padding: 10px;
+    background-color: #5e8dc9;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#eventListContainer button:hover {
+    background-color: #3e6c9f;
 }
 
 form {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+form .form-group {
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 form input {
     padding: 10px;
-    margin-right: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: calc(33% - 20px);
+    width: 100%;
 }
 
 form button {
     padding: 10px 20px;
     background-color: #5e8dc9;
     border: none;
-    color: #fff;
+    color: white;
     border-radius: 4px;
     cursor: pointer;
+    width: 100%;
 }
 
 form button:hover {
