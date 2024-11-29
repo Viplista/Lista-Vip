@@ -9,22 +9,26 @@
 <body>
     <!-- Cabeçalho com logo e título -->
     <header>
-        <img src="logo.png" alt="Logo do Evento" class="logo">
-        <h1>Administração - Lista de Convidados</h1>
+        <div class="header-container">
+            <img src="logo.png" alt="Logo do Evento" class="logo">
+            <h1>Administração - Lista de Convidados</h1>
+        </div>
     </header>
 
     <!-- Tabela com lista de convidados -->
-    <table id="guestTable">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>Contato</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-    <button id="downloadBtn">Baixar Lista (CSV)</button>
+    <main>
+        <table id="guestTable">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Contato</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button id="downloadBtn">Baixar Lista (CSV)</button>
+    </main>
     <script src="script.js"></script>
     <script>
         displayGuests(); // Carrega os convidados na tabela
