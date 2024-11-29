@@ -1,60 +1,34 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: #f4f4f9;
-    color: #333;
-}
-
-h1 {
-    background-color: #6200ea;
+/* Cabeçalho */
+header {
+    background-color: #000;
     color: #fff;
-    margin: 0;
-    padding: 20px;
-}
-
-form, table {
-    margin: 20px auto;
-    max-width: 400px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-input, button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
     width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
-button {
-    background-color: #6200ea;
-    color: #fff;
-    cursor: pointer;
+header h1 {
+    flex: 1;
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-button:hover {
-    background-color: #45009d;
+header .logo {
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
 }
 
-table {
-    width: 90%;
-    border-collapse: collapse;
-    margin: 20px auto;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #6200ea;
-    color: white;
+/* Ajustando o conteúdo abaixo do cabeçalho */
+body {
+    padding-top: 70px; /* Espaço para o cabeçalho fixo */
 }
