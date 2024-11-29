@@ -1,19 +1,5 @@
-// Armazenamento local para persistir os dados entre recarregamentos
-const guestListKey = 'guestList';
-
-// Função para obter a lista de convidados do armazenamento local
-function getGuestList() {
-    const storedList = localStorage.getItem(guestListKey);
-    return storedList ? JSON.parse(storedList) : [];
-}
-
-// Função para salvar a lista de convidados no armazenamento local
-function saveGuestList(guestList) {
-    localStorage.setItem(guestListKey, JSON.stringify(guestList));
-}
-
-// Função para adicionar um novo convidado à lista
-document.getElementById('guestForm')?.addEventListener('submit', function(event) {
+// Função para adicionar um convidado à lista
+document.getElementById('guestForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const name = document.getElementById('name').value;
@@ -21,40 +7,45 @@ document.getElementById('guestForm')?.addEventListener('submit', function(event)
     const contact = document.getElementById('contact').value;
 
     if (name && contact) {
-        // Cria um objeto para o convidado
-        const guest = {
-            name: name,
-            cpf: cpf,
-            contact: contact
-        };
-
-        // Adiciona à lista de convidados
+        // Obtém a lista de convidados do localStorage (caso exista)
         const guestList = getGuestList();
-        guestList.push(guest);
+
+        // Adiciona o novo convidado à lista
+        guestList.push({ name, cpf, contact });
+
+        // Salva a lista atualizada no localStorage
         saveGuestList(guestList);
 
-        // Limpa os campos do formulário
+        // Atualiza a tabela de convidados
+        updateGuestTable();
+
+        // Limpa o formulário
         document.getElementById('guestForm').reset();
-        document.getElementById('message').textContent = 'Convidado adicionado com sucesso!';
-    } else {
-        document.getElementById('message').textContent = 'Por favor, preencha todos os campos obrigatórios.';
     }
 });
 
-// Função para exibir os convidados na tabela da página de administração
-function displayGuests() {
-    const guestList = getGuestList();
+// Função para obter a lista de convidados do localStorage
+function getGuestList() {
+    const guestList = localStorage.getItem('guestList');
+    return guestList ? JSON.parse(guestList) : [];
+}
 
-    // Obtém a tabela do HTML
-    const tableBody = document.querySelector('#guestTable tbody');
+// Função para salvar a lista de convidados no localStorage
+function saveGuestList(guestList) {
+    localStorage.setItem('guestList', JSON.stringify(guestList));
+}
+
+// Função para atualizar a tabela com a lista de convidados
+function updateGuestTable() {
+    const guestList = getGuestList();
+    const tableBody = document.getElementById('guestTableBody');
 
     // Limpa a tabela antes de adicionar os novos convidados
     tableBody.innerHTML = '';
 
-    // Exibe os convidados na tabela (somente nomes)
-    guestList.forEach(function(guest) {
+    guestList.forEach(guest => {
         const row = document.createElement('tr');
-        row.innerHTML = `<td>${guest.name}</td>`;
+        row.innerHTML = `<td>${guest.name}</td><td>${guest.contact}</td>`;
         tableBody.appendChild(row);
     });
 
