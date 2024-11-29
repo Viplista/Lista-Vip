@@ -9,19 +9,21 @@ body {
 header {
     background-color: #54565A;
     padding: 20px;
-    text-align: center;
+    display: flex;
+    align-items: center; /* Alinha logo e nome verticalmente */
+    justify-content: center;
 }
 
 header .logo {
-    width: 50px;
-    height: auto;
-    margin-right: 10px;
+    width: 50px; /* Tamanho fixo da largura da logo */
+    height: 50px; /* Tamanho fixo da altura da logo */
+    margin-right: 15px; /* Espaço entre logo e nome */
 }
 
-header h1 {
-    display: inline;
+header .event-name {
     color: #fff;
     font-size: 24px;
+    margin: 0;
 }
 
 main {
@@ -52,38 +54,4 @@ form button {
 
 form button:hover {
     background-color: #3e6c9f;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-table th, table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-table th {
-    background-color: #f4f4f4;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #5e8dc9;
-    border: none;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #3e6c9f;
-}
-
-p {
-    font-size: 16px;
-    font-weight: bold;
 }

@@ -9,8 +9,9 @@
 <body>
     <header>
         <div class="header-container">
-            <img src="logo.png" alt="Logo do Evento" class="logo">
-            <h1>Lista de Convidados</h1>
+            <!-- Logo Atualizada com a URL fornecida -->
+            <img src="https://cdn.awsli.com.br/2648/2648208/arquivos/vip.png" alt="Logo do Evento" class="logo">
+            <h1 class="event-name">Nome do Evento</h1> <!-- Nome do Evento -->
         </div>
     </header>
 
@@ -21,26 +22,9 @@
             <input type="text" id="contact" placeholder="Contato" required>
             <button type="submit">Adicionar Convidado</button>
         </form>
-
-        <h2>Convidados Confirmados</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Contato</th>
-                </tr>
-            </thead>
-            <tbody id="guestTableBody">
-                <!-- Convidados serão listados aqui -->
-            </tbody>
-        </table>
-
-        <p id="totalGuests">Total de Convidados: 0</p>
-
-        <button id="downloadBtn">Baixar Lista em CSV</button>
-        <button id="downloadPdfBtn">Baixar Lista em PDF</button>
     </main>
 
     <script src="script.js"></script>
 </body>
 </html>
+
